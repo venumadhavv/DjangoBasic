@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+<!-- <h1>{{mesg}} projcect2 {{numb}} </h1>
+{% if mesg == 'LIST OF MOVIES' %}
+    <h1>MOVIES</h1>
+{% elif mesg == 'bai' %}
+    <h1>bai</h1>
+{% else %}
+    <h1> {{mesg}}</h1>
+{% endif %} -->
+
+
+<hr>
+{% for i in mve.tags.all %}
+    <p>{{i}}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<h1 text-align="center" style="color: blue;">Pepsi Team Project</h1>
+
+<a href ="{% url 'create_project' %}"> Add Project</a>
+<table border="2" cellpadding="5" cellspacing="5">
+    <tr>
+        <th>Title</th>
+        <th>description</th>
+        <!-- <th>link</th>
+        <th>tags</th>
+        <th>Total Votes</th>
+        <th>Vote Ratio</th> -->
+    </tr>
+    {% for movie in movies %}
+
+        <tr>
+            <td>{{ movie.title }} </a> </td>
+            <td>{{ movie.description }}</td>
+            <!-- <td>{{ movie.link }}</td>
+            <td>
+                {% for i in movie.tags.all %}
+                    {{i}}
+                {% endfor %}
+            </td>
+            <td>{{ movie.vote_total }}</td>
+            <td>{{ movie.vote_ratio }}</td> -->
+            <td><a href="{% url 'update_project' movie.id%}">Edit</a></td>
+            <td><a href="{% url 'delete_project' movie.id %}">Delete</a></td>
+
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+{% endblock %}
